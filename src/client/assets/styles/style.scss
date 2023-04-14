@@ -1,0 +1,396 @@
+@font-face {
+  font-family: "SF UI Display 900";
+  src: url('../fonts/sf-ui-display-black-58646a6b80d5a.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 800";
+  src: url('../fonts/sf-ui-display-bold-58646a511e3d9.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 700";
+  src: url('../fonts/sf-ui-display-heavy-586470160b9e5.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 600";
+  src: url('../fonts/sf-ui-display-light-58646b33e0551.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 500";
+  src: url('../fonts/sf-ui-display-medium-58646be638f96.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 300";
+  src: url('../fonts/sf-ui-display-semibold-58646eddcae92.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 200";
+  src: url('../fonts/sf-ui-display-thin-58646e9b26e8b.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 100";
+  src: url('../fonts/sf-ui-display-ultralight-58646b19bf205.otf');
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  border: none;
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a,
+button,
+input,
+textarea {
+  outline: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+
+  &__main {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+.btn {
+  background-color: #A8B64F;
+  padding: 20px 50px;
+  font-family: 'SF UI Display 500';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 17px;
+  color: #FFFFFF;
+
+  &:hover {
+    background-color: #899441;
+    transition: 0.5s all;
+    cursor:  pointer;
+  }
+
+  &--grey {
+    color: #C4C4C4;
+    background-color: #F4F4F4;
+    border: 2px solid #C4C4C4;
+  }
+}
+
+.header {
+  padding: 25px 0;
+  background-color: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    grid-gap: 15px;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+
+  &__logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__logo-text {
+    font-family: 'SF UI Display 500';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+    color: #DC3E22;
+  }
+
+  &__statistics {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+
+  &__statistics-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__statistics-text {
+    font-family: 'SF UI Display 500';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 17px;
+    color: #DC3E22;
+  }
+}
+
+.main {
+  margin-top: 100px;
+}
+
+.LeftContainer {
+  max-width: 535px;
+
+  &__title {
+    font-family: 'SF UI Display 700';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #333333;
+    margin-bottom: 5px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 25px;
+  }
+
+  &__list-item {
+    // font-family: 'SF UI Display 00';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 33px;
+    color: #333333;
+    position: relative;
+    padding-left: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 13px;
+
+      width: 5px;
+      height: 5px;
+      background-color: #B7280F;
+      border-radius: 50%;
+    }
+  }
+
+  &__addTask {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__input {
+    max-width: 370px;
+    padding: 20px 15px;
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    background-color: #F4F4F4;
+
+    &::placeholder {
+      color: #999999;
+      font-family: 'SF UI Display 200';
+      font-style: normal;
+      font-size: 16px;
+      line-height: 17px;
+    }
+  }
+
+  &__btn {
+    width: 173px;
+  }
+
+}
+
+.RightContainer {
+  height: 505px;
+  max-width: 735px;
+  width: 100%;
+
+  &__top {
+    display: flex;
+    padding: 20px 40px;
+    background-color: #C4C4C4;
+    justify-content: space-between;
+  }
+
+  &__top-left {
+    font-family: 'SF UI Display 700';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #FFFFFF;
+  }
+
+  &__top-right {
+    font-family: 'SF UI Display 300';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #FFFFFF;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #F4F4F4;
+  }
+
+  &__timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__timer-value {
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 150px;
+    line-height: 179px;
+    color: #333333;
+    position: relative;
+  }
+
+  &__timer-add {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    position: absolute;
+    top: 50%;
+    right: -70px;
+    transform: translateY(-50%);
+
+
+    &::after,
+    &::before {
+      content: "";
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 2.5px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -75%);
+      left: 50%;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &__text {
+    font-family: 'SF UI Display 300';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #999999;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__text-task {
+    font-family: 'SF UI Display 500';
+    color: #333333;
+  }
+
+  &__timer-btns {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+  }
+}
