@@ -1,28 +1,63 @@
 import { Reducer, ActionCreator, AnyAction } from 'redux';
 
+
 export type RootState = {
-  InputValue: string
+  Tasks: Array<object>
 }
 
 const initialState: RootState = {
-  InputValue: ''
+  Tasks: []
 }
 
-const UPDATE_INPUT_VALUE = "UPDATE_INPUT_VALUE"
+interface task {
+  text: string
+  number: number
+  time: {
+    minutes: number,
+    seconds: number
+  }
+  isRun: boolean
+}
 
-export const updateInputValue: ActionCreator<AnyAction> = (text) => ({
-  type: UPDATE_INPUT_VALUE,
-  text
+const ADD_ARRAY_TASKS = "ADD_ARRAY_TASKS"
+
+export const updateTasks: ActionCreator<AnyAction> = (task) => ({
+  type: ADD_ARRAY_TASKS,
+  task
+})
+
+const CHANGE_TASK = "CHANGE_TASK"
+
+export const changeTask: ActionCreator<AnyAction> = (task) => ({
+  type: CHANGE_TASK,
+  task
 })
 
 export const rootReducer: Reducer = (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_INPUT_VALUE:
+    case ADD_ARRAY_TASKS:
       return {
         ...state,
-        InputValue: action.text
+        Tasks: [...state.Tasks, action.task]
+      }
+    case CHANGE_TASK:
+      return {
+        ...state,
+        Tasks: state.Tasks.map(
+          (task: task) => task.number === action['task']['number']
+            ?
+            {
+              ...task,
+              time: {
+                minutes: action['task']['time']['minutes'],
+                seconds: action['task']['time']['seconds']
+              },
+              isRun: action['task']['isRun']
+            }
+            : task
+        ),
       }
     default:
-      return state;
+      return state
   }
 }

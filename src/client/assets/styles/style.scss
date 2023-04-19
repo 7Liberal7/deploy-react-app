@@ -153,13 +153,19 @@ address {
   &:hover {
     background-color: #899441;
     transition: 0.5s all;
-    cursor:  pointer;
+    cursor: pointer;
   }
 
   &--grey {
     color: #C4C4C4;
     background-color: #F4F4F4;
     border: 2px solid #C4C4C4;
+
+    &:hover {
+      background-color: rgba(#C4C4C4, 0.3);
+      transition: 0.5s all;
+      cursor: pointer;
+    }
   }
 }
 
@@ -288,6 +294,65 @@ address {
 
   &__btn {
     width: 173px;
+  }
+
+  &__tasks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+
+  &__tasks-item {
+    padding: 20px 0;
+    border-top: 1px solid #E4E4E4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__tasks-info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tasks-number {
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #C4C4C4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tasks-text {
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    margin-left: 10px;
+  }
+
+  &__tasks-btn {
+    width: 25px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 25px;
+    align-items: center;
+  }
+
+  &__tasks-circle {
+    width: 5px;
+    height: 5px;
+    background-color: #C4C4C4;
+    border-radius: 50%;
   }
 
 }
