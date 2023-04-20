@@ -21,7 +21,7 @@ export const AddTask = () => {
   function addValue() {
     dispatch(updateTasks({
       text: inputValue,
-      number: arrTasks.length + 1,
+      number: arrTasks.length - arrTasks.length + 1,
       time: {
         minutes: 25,
         seconds: 0
