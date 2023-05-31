@@ -1,12 +1,17 @@
-//@ts-nocheck
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { changeTask, RootState } from "../../../store";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
+interface IArrTasks {
+  [key: string]: any
+}
+
+
 export const Timer = () => {
   const dispatch = useDispatch()
-  const arrTasks = useSelector<RootState, Array<object>>(state => state.Tasks)
+  const arrTasks: IArrTasks = useSelector<RootState, Array<object>>(state => state.Tasks)
+  
   useEffect(() => {
     const timerID = setInterval(() => timer(), 1000);
     return () => clearInterval(timerID);
@@ -16,6 +21,7 @@ export const Timer = () => {
     if (arrTasks.length != 0) {
       dispatch(changeTask({
         number: arrTasks[0]['number'],
+        index: 0,
         time: {
           minutes: arrTasks[0]['time']['minutes'],
           seconds: arrTasks[0]['time']['seconds']
@@ -29,6 +35,7 @@ export const Timer = () => {
     if (arrTasks.length != 0) {
       dispatch(changeTask({
         number: arrTasks[0]['number'],
+        index: 0,
         time: {
           minutes: arrTasks[0]['time']['minutes'],
           seconds: arrTasks[0]['time']['seconds']
@@ -42,6 +49,7 @@ export const Timer = () => {
       if (arrTasks[0]['time']['seconds'] != 0) {
         dispatch(changeTask({
           number: arrTasks[0]['number'],
+          index: 0,
           time: {
             minutes: arrTasks[0]['time']['minutes'],
             seconds: arrTasks[0]['time']['seconds'] - 1
@@ -51,6 +59,7 @@ export const Timer = () => {
       } else {
         dispatch(changeTask({
           number: arrTasks[0]['number'],
+          index: 0,
           time: {
             minutes: arrTasks[0]['time']['minutes'] - 1,
             seconds: 59
