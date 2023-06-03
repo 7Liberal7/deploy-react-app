@@ -1,0 +1,641 @@
+@font-face {
+  font-family: "SF UI Display 900";
+  src: url('../fonts/sf-ui-display-black-58646a6b80d5a.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 800";
+  src: url('../fonts/sf-ui-display-bold-58646a511e3d9.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 700";
+  src: url('../fonts/sf-ui-display-heavy-586470160b9e5.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 600";
+  src: url('../fonts/sf-ui-display-light-58646b33e0551.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 500";
+  src: url('../fonts/sf-ui-display-medium-58646be638f96.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 300";
+  src: url('../fonts/sf-ui-display-semibold-58646eddcae92.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 200";
+  src: url('../fonts/sf-ui-display-thin-58646e9b26e8b.otf');
+}
+
+@font-face {
+  font-family: "SF UI Display 100";
+  src: url('../fonts/sf-ui-display-ultralight-58646b19bf205.otf');
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  border: none;
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a,
+button,
+input,
+textarea {
+  outline: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.body {
+  &--hidden {
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+
+  &__main {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+.btn {
+  background-color: #A8B64F;
+  padding: 20px 50px;
+  font-family: 'SF UI Display 500';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 17px;
+  color: #FFFFFF;
+
+  &:hover {
+    background-color: #899441;
+    transition: 0.5s all;
+    cursor: pointer;
+  }
+
+  &--grey {
+    color: #C4C4C4;
+    background-color: #F4F4F4;
+    border: 2px solid #C4C4C4;
+
+    &:hover {
+      background-color: rgba(#C4C4C4, 0.3);
+      transition: 0.5s all;
+      cursor: pointer;
+    }
+  }
+
+  &--del {
+    background-color: #DC3E22;
+    max-width: 162px;
+
+    &:hover {
+      background-color: rgba(#DC3E22, 0.75);
+      transition: 0.5s all;
+      cursor: pointer;
+    }
+  }
+}
+
+.header {
+  padding: 25px 0;
+  background-color: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    grid-gap: 15px;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+
+  &__logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__logo-text {
+    font-family: 'SF UI Display 500';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+    color: #DC3E22;
+  }
+
+  &__statistics {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+
+  &__statistics-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__statistics-text {
+    font-family: 'SF UI Display 500';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 17px;
+    color: #DC3E22;
+  }
+}
+
+.main {
+  margin-top: 100px;
+}
+
+.LeftContainer {
+  max-width: 535px;
+
+  &__title {
+    font-family: 'SF UI Display 700';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #333333;
+    margin-bottom: 5px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 25px;
+  }
+
+  &__list-item {
+    // font-family: 'SF UI Display 00';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 33px;
+    color: #333333;
+    position: relative;
+    padding-left: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 13px;
+
+      width: 5px;
+      height: 5px;
+      background-color: #B7280F;
+      border-radius: 50%;
+    }
+  }
+
+  &__addTask {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__input {
+    max-width: 370px;
+    padding: 20px 15px;
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    background-color: #F4F4F4;
+
+    &::placeholder {
+      color: #999999;
+      font-family: 'SF UI Display 200';
+      font-style: normal;
+      font-size: 16px;
+      line-height: 17px;
+    }
+  }
+
+  &__btn {
+    width: 173px;
+  }
+
+  &__tasks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+
+  &__tasks-item {
+    padding: 20px 0;
+    border-top: 1px solid #E4E4E4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  &__tasks-info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tasks-number {
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #C4C4C4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tasks-text {
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    margin-left: 10px;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 5px;
+
+    &:focus {
+      background-color: #F4F4F4;
+    }
+  }
+
+  &__tasks-btn {
+    width: 25px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 25px;
+    align-items: center;
+  }
+
+  &__tasks-circle {
+    width: 5px;
+    height: 5px;
+    background-color: #C4C4C4;
+    border-radius: 50%;
+  }
+
+  &__dropdown {
+    position: absolute;
+    width: 165px;
+    height: 153px;
+    right: -82.5px;
+    bottom: -140px;
+    border: 1px solid #C4C4C4;
+    background-color: #fff;
+    z-index: 10;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 8px solid transparent;
+      border-bottom: 10px solid #C4C4C4;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-bottom: 8px solid #fff;
+      z-index: 10;
+    }
+  }
+
+  &__dropdown-list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3px;
+  }
+
+  &__dropdown-item {
+    height: 36px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__dropdown-btn {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-left: 15px;
+    height: 100%;
+    align-items: center;
+
+    &:hover {
+      background-color: #F4F4F4;
+      transition: 0.3s all;
+    }
+  }
+
+  &__dropdown-img {
+    width: 15px;
+    height: 15px;
+  }
+
+  &__dropdown-text {
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #999999;
+  }
+
+  &__tasks-time {
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #999999;
+    margin-bottom: 150px;
+  }
+}
+
+.RightContainer {
+  height: 505px;
+  max-width: 735px;
+  width: 100%;
+
+  &__top {
+    display: flex;
+    padding: 20px 40px;
+    background-color: #C4C4C4;
+    justify-content: space-between;
+  }
+
+  &__top-left {
+    font-family: 'SF UI Display 700';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #FFFFFF;
+  }
+
+  &__top-right {
+    font-family: 'SF UI Display 300';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #FFFFFF;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #F4F4F4;
+  }
+
+  &__timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__timer-value {
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 150px;
+    line-height: 179px;
+    color: #333333;
+    position: relative;
+  }
+
+  &__timer-add {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    position: absolute;
+    top: 50%;
+    right: -70px;
+    transform: translateY(-50%);
+
+
+    &::after,
+    &::before {
+      content: "";
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 2.5px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -75%);
+      left: 50%;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &__text {
+    font-family: 'SF UI Display 300';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #999999;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__text-task {
+    font-family: 'SF UI Display 500';
+    color: #333333;
+  }
+
+  &__timer-btns {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+  }
+}
+
+.modal-del {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+
+  &__container {
+    width: 350px;
+    height: 175px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    // top: 50%;
+    left: 50%;
+  }
+
+  &__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+  }
+
+  &__close-elem {
+    background-color: #C4C4C4;
+    width: 15px;
+    height: 3px;
+    position: absolute;
+    left: 5px;
+    top: 11px;
+    transform: rotate(45deg);
+
+    &--second {
+      transform: rotate(135deg);
+    }
+  }
+
+  &__wrapper {
+    max-width: 200px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: 'SF UI Display 300';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 17px;
+    color: #333333;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  &__btn {
+    margin-top: 10px;
+    font-family: 'SF UI Display 200';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    border-bottom: 1px solid #333333;
+  }
+}
